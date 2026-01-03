@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tab3IconWS.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
