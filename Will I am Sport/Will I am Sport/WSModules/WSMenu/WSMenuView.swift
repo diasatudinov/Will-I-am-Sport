@@ -25,7 +25,7 @@ struct PCMenuContainer: View {
 
 struct WSMenuView: View {
     @State var selectedTab = 0
-//    @StateObject var viewModel = PCIncomeViewModel()
+    @StateObject var viewModel = WSCheckListViewModel()
     private let tabs = ["My dives", "Calendar", "Stats",""]
     
     var body: some View {
@@ -33,13 +33,13 @@ struct WSMenuView: View {
             
             switch selectedTab {
             case 0:
-                Color.blue.ignoresSafeArea()
+                WSChecklistView(viewModel: viewModel)
             case 1:
-                Color.purple.ignoresSafeArea()
+                WSBeforeView(viewModel: viewModel)
             case 2:
-                Color.red.ignoresSafeArea()
+                WSAfterView(viewModel: viewModel)
             case 3:
-                Color.pink.ignoresSafeArea()
+                WSStatsView(viewModel: viewModel)
             default:
                 Text("default")
             }
@@ -110,5 +110,7 @@ struct WSMenuView: View {
 
 
 #Preview {
-    WSMenuView()
+    NavigationStack {
+        WSMenuView()
+    }
 }
